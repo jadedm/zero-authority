@@ -1,0 +1,54 @@
+name: Refresh
+
+on:
+  schedule:
+    # a few times a day, spread across the window when gameweeks settle
+    - cron: '15 6,12,18,23 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # build.py exits non-zero and writes nothing rather than leaving a partial
+      # or empty data.json, so a bad fetch keeps the last good sheet published.
+      - name: Fetch the league
+        run: python build.py
+
+      - name: Check the sheet is coherent
+        run: python check.py
+
+      - name: Commit if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet data.json; then
+            echo "no change"
+          else
+            git add data.json
+            git commit -m "refresh: $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

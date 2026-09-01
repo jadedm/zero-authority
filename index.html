@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zero authority</title>
+<style>
+  :root {
+    --ink: #1a1815; --faint: #6b6660; --rule: #ccc6ba; --paper: #f4f1ea;
+    --win: #1c5c3a; --loss: #8a2b1f; --hi: #efe8d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8e3d9; --faint: #8f8880; --rule: #3a3630; --paper: #17150f;
+      --win: #6fbb8e; --loss: #d8776a; --hi: #221f18;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink); margin: 0;
+    font: 16px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    padding: 3.5rem 1.25rem 5rem;
+  }
+  .sheet { max-width: 62rem; margin: 0 auto; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: .6rem; margin-bottom: 2.25rem; }
+  h1 { font-size: 2.1rem; margin: 0; font-weight: 600; letter-spacing: -.01em; }
+  .sub { color: var(--faint); font-size: .92rem; margin-top: .35rem; }
+  .wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  th, td { padding: .55rem .5rem; text-align: right; border-bottom: 1px solid var(--rule); }
+  th {
+    font-size: .72rem; text-transform: uppercase; letter-spacing: .09em;
+    color: var(--faint); font-weight: 600; border-bottom: 1px solid var(--ink);
+    white-space: nowrap;
+  }
+  td.pos { text-align: left; color: var(--faint); width: 1.6rem; }
+  td.who { text-align: left; }
+  .team { display: block; font-weight: 600; }
+  .name { display: block; font-size: .82rem; color: var(--faint); }
+  td.tot { font-weight: 700; font-size: 1.05rem; border-left: 1px solid var(--rule); }
+  td.won { background: var(--hi); font-weight: 700; }
+  td.gap, td.wins { color: var(--faint); }
+  tr.lead td.tot { color: var(--win); }
+  td.net { font-weight: 600; }
+  .up { color: var(--win); } .down { color: var(--loss); }
+  h2 {
+    font-size: .76rem; text-transform: uppercase; letter-spacing: .1em;
+    color: var(--faint); margin: 2.75rem 0 .85rem; font-weight: 600;
+  }
+  .cols { display: flex; flex-wrap: wrap; gap: 2.5rem; }
+  .col { flex: 1 1 15rem; }
+  ul { margin: 0; padding-left: 1.1rem; }
+  li { margin-bottom: .3rem; }
+  dt { font-size: .82rem; color: var(--faint); margin-top: .7rem; }
+  dd { margin: 0; font-size: 1.05rem; }
+  .rules { font-size: .92rem; color: var(--faint); }
+  .rules b { color: var(--ink); font-weight: 600; }
+  .note { font-size: .85rem; color: var(--faint); margin-top: .8rem; }
+  footer {
+    margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+    font-size: .8rem; color: var(--faint);
+  }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85em; }
+  .err { color: var(--loss); }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <h1>zero authority</h1>
+    <div class="sub" id="sub">Loading the sheet&hellip;</div>
+  </header>
+  <div id="body"></div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const money = v => (v < 0 ? "−" : "") + "₹" + Math.abs(v).toLocaleString("en-IN");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function render(d) {
+  const gws = d.settled, ms = d.table, n = ms.length;
+  const heads = gws.map(g => `<th>${g}</th>`).join("");
+
+  const rows = ms.map(m => {
+    const cells = gws.map(g => {
+      const p = m.weeks[String(g)];
+      const won = m.win_gws.includes(g) ? " class='won'" : "";
+      return `<td${won}>${p === undefined ? "&mdash;" : p}</td>`;
+    }).join("");
+    const netCls = m.net > 0 ? "up" : (m.net < 0 ? "down" : "");
+    return `<tr class="${m.pos === 1 ? "lead" : ""}">
+      <td class="pos">${m.pos}</td>
+      <td class="who"><span class="team">${esc(m.team)}</span><span class="name">${esc(m.name)}</span></td>
+      ${cells}
+      <td class="tot">${m.total}</td>
+      <td class="gap">${m.gap === 0 ? "&mdash;" : "&minus;" + m.gap}</td>
+      <td class="wins">${m.wins}</td>
+      <td class="net ${netCls}">${money(m.net)}</td>
+    </tr>`;
+  }).join("");
+
+  const coffees = ms.map(m => {
+    const c = m.coffees, first = esc(m.name.split(" ")[0]);
+    const verb = c > 0 ? "is owed" : (c < 0 ? "owes" : "is square on");
+    return `<li><strong>${first}</strong> ${verb} ${Math.abs(c)} coffee${Math.abs(c) === 1 ? "" : "s"}</li>`;
+  }).join("");
+
+  const wl = d.win_leaders.length === 0 ? "nobody yet"
+    : `${d.win_leaders.map(esc).join(", ")} on ${d.most_wins}`;
+  const second = ms[1];
+  const r = d.rules;
+
+  document.getElementById("sub").innerHTML =
+    `Settlement sheet after gameweek ${gws[gws.length - 1]} of 38 &nbsp;&middot;&nbsp; ` +
+    (d.live.length ? `gameweek ${d.live[0]} still in play, not counted` : "all played gameweeks settled");
+
+  document.getElementById("body").innerHTML = `
+    <div class="wrap"><table>
+      <thead><tr>
+        <th></th><th style="text-align:left">Manager</th>${heads}
+        <th>Total</th><th>Gap</th><th>GW wins</th><th>Net if it ended now</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <div class="note">Shaded cells are gameweek wins. Net assumes the season ended today: it counts
+      the ${money(r.entry)} entry, the ${money(r.penalty)} last-place penalty, and both prizes.</div>
+
+    <div class="cols">
+      <div class="col">
+        <h2>As it stands</h2>
+        <dl>
+          <dt>Leader</dt><dd>${esc(ms[0].team)} on ${ms[0].total}</dd>
+          <dt>Second, behind by</dt>
+          <dd>${second ? esc(second.team) + " by " + second.gap : "&mdash;"}</dd>
+          <dt>Most gameweek wins</dt><dd>${wl}</dd>
+          <dt>Paying the penalty</dt><dd>${esc(ms[n - 1].team)}</dd>
+        </dl>
+      </div>
+      <div class="col">
+        <h2>Coffee ledger</h2>
+        <ul>${coffees}</ul>
+        <div class="note">One coffee from each other manager for every gameweek won.</div>
+      </div>
+      <div class="col">
+        <h2>The rules</h2>
+        <p class="rules">
+          <b>${money(r.entry)}</b> entry each, plus <b>${money(r.penalty)}</b> from whoever
+          finishes last, making a <b>${money(r.pool)}</b> pool.<br><br>
+          <b>${money(r.overall)}</b> to the overall winner.<br>
+          <b>${money(r.gw_wins)}</b> to whoever wins the most gameweeks.<br>
+          A coffee to each gameweek's winner, from the other two.
+        </p>
+      </div>
+    </div>`;
+
+  const when = new Date(d.generated_at);
+  document.getElementById("foot").innerHTML =
+    `Figures fetched from the Fantasy Premier League API at ` +
+    `${when.toLocaleString(undefined, {weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"})}, ` +
+    `and refreshed a few times a day. A gameweek counts only once every fixture in it has been ` +
+    `played, so a week in progress never awards a win or a coffee.`;
+}
+
+fetch("data.json", {cache: "no-store"})
+  .then(r => { if (!r.ok) throw new Error("data.json returned " + r.status); return r.json(); })
+  .then(render)
+  .catch(e => {
+    document.getElementById("sub").innerHTML =
+      `<span class="err">Could not load the sheet: ${esc(e.message)}</span>`;
+  });
+</script>
+</body>
+</html>
