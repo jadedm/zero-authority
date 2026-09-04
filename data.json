@@ -1,11 +1,13 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-09-04T16:23:34+00:00",
+  "generated_at": "2026-09-04T20:46:59+00:00",
   "settled": [
     1,
     2
   ],
-  "live": [],
+  "live": [
+    3
+  ],
   "rules": {
     "entry": 1000,
     "penalty": 1000,
@@ -20,7 +22,8 @@
       "total": 163,
       "weeks": {
         "1": 59,
-        "2": 104
+        "2": 104,
+        "3": 0
       },
       "pos": 1,
       "gap": 0,
@@ -38,7 +41,8 @@
       "total": 160,
       "weeks": {
         "1": 46,
-        "2": 114
+        "2": 114,
+        "3": 0
       },
       "pos": 2,
       "gap": 3,
@@ -53,13 +57,14 @@
     {
       "team": "Gooner_Psy",
       "name": "Saiprasad Shankar",
-      "total": 145,
+      "total": 148,
       "weeks": {
         "1": 40,
-        "2": 105
+        "2": 105,
+        "3": 0
       },
       "pos": 3,
-      "gap": 18,
+      "gap": 15,
       "win_gws": [],
       "wins": 0,
       "is_last": true,
