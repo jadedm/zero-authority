@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-09-07T01:02:40+00:00",
+  "generated_at": "2026-09-07T12:37:33+00:00",
   "settled": [
     1,
     2,
@@ -22,7 +22,7 @@
       "weeks": {
         "1": 59,
         "2": 104,
-        "3": 32
+        "3": 44
       },
       "pos": 1,
       "gap": 0,
@@ -33,26 +33,26 @@
       "wins": 2,
       "is_last": false,
       "net": 3000,
-      "coffees": 2
+      "coffees": 3
     },
     {
       "team": "sentinels",
       "name": "Manish Jadhav",
-      "total": 186,
+      "total": 187,
       "weeks": {
         "1": 46,
         "2": 114,
-        "3": 14
+        "3": 27
       },
       "pos": 2,
-      "gap": 21,
+      "gap": 20,
       "win_gws": [
         2
       ],
       "wins": 1,
       "is_last": false,
       "net": -1000,
-      "coffees": -1
+      "coffees": 0
     },
     {
       "team": "Gooner_Psy",
@@ -61,17 +61,15 @@
       "weeks": {
         "1": 40,
         "2": 105,
-        "3": 32
+        "3": 37
       },
       "pos": 3,
       "gap": 25,
-      "win_gws": [
-        3
-      ],
-      "wins": 1,
+      "win_gws": [],
+      "wins": 0,
       "is_last": true,
       "net": -2000,
-      "coffees": -1
+      "coffees": -3
     }
   ],
   "win_leaders": [
