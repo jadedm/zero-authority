@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-09-21T01:08:58+00:00",
+  "generated_at": "2026-09-21T12:52:22+00:00",
   "settled": [
     1,
     2,
@@ -20,13 +20,13 @@
     {
       "team": "Wizards of \u00d8",
       "name": "Satyajeet Kunjeer",
-      "total": 332,
+      "total": 336,
       "weeks": {
         "1": 59,
         "2": 104,
         "3": 44,
         "4": 68,
-        "5": 57
+        "5": 61
       },
       "pos": 1,
       "gap": 0,
@@ -38,7 +38,7 @@
       "wins": 3,
       "is_last": false,
       "net": 3000,
-      "coffees": 3
+      "coffees": 4
     },
     {
       "team": "sentinels",
@@ -52,7 +52,7 @@
         "5": 49
       },
       "pos": 2,
-      "gap": 6,
+      "gap": 10,
       "win_gws": [
         2,
         4
@@ -60,7 +60,7 @@
       "wins": 2,
       "is_last": false,
       "net": -1000,
-      "coffees": 0
+      "coffees": 1
     },
     {
       "team": "Gooner_Psy",
@@ -74,14 +74,12 @@
         "5": 57
       },
       "pos": 3,
-      "gap": 20,
-      "win_gws": [
-        5
-      ],
-      "wins": 1,
+      "gap": 24,
+      "win_gws": [],
+      "wins": 0,
       "is_last": true,
       "net": -2000,
-      "coffees": -3
+      "coffees": -5
     }
   ],
   "win_leaders": [
