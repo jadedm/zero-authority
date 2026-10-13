@@ -1,16 +1,15 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-10-12T15:30:39+00:00",
+  "generated_at": "2026-10-13T00:43:25+00:00",
   "settled": [
     1,
     2,
     3,
     4,
-    5
-  ],
-  "live": [
+    5,
     6
   ],
+  "live": [],
   "rules": {
     "entry": 1000,
     "penalty": 1000,
@@ -41,27 +40,29 @@
       "wins": 3,
       "is_last": false,
       "net": 3000,
-      "coffees": 4
+      "coffees": 3
     },
     {
       "team": "Gooner_Psy",
       "name": "Saiprasad Shankar",
-      "total": 379,
+      "total": 381,
       "weeks": {
         "1": 40,
         "2": 105,
         "3": 37,
         "4": 73,
         "5": 57,
-        "6": 67
+        "6": 69
       },
       "pos": 2,
-      "gap": 21,
-      "win_gws": [],
-      "wins": 0,
+      "gap": 19,
+      "win_gws": [
+        6
+      ],
+      "wins": 1,
       "is_last": false,
       "net": -1000,
-      "coffees": -5
+      "coffees": -3
     },
     {
       "team": "sentinels",
@@ -84,7 +85,7 @@
       "wins": 2,
       "is_last": true,
       "net": -2000,
-      "coffees": 1
+      "coffees": 0
     }
   ],
   "win_leaders": [
