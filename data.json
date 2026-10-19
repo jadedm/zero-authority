@@ -1,17 +1,16 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-10-19T13:21:37+00:00",
+  "generated_at": "2026-10-19T22:22:44+00:00",
   "settled": [
     1,
     2,
     3,
     4,
     5,
-    6
-  ],
-  "live": [
+    6,
     7
   ],
+  "live": [],
   "rules": {
     "entry": 1000,
     "penalty": 1000,
@@ -42,8 +41,8 @@
       ],
       "wins": 3,
       "is_last": false,
-      "net": 3000,
-      "coffees": 3
+      "net": 2500,
+      "coffees": 2
     },
     {
       "team": "Gooner_Psy",
@@ -66,12 +65,12 @@
       "wins": 1,
       "is_last": false,
       "net": -1000,
-      "coffees": -3
+      "coffees": -4
     },
     {
       "team": "sentinels",
       "name": "Manish Jadhav",
-      "total": 433,
+      "total": 437,
       "weeks": {
         "1": 46,
         "2": 114,
@@ -82,19 +81,21 @@
         "7": 71
       },
       "pos": 3,
-      "gap": 33,
+      "gap": 29,
       "win_gws": [
         2,
-        4
+        4,
+        7
       ],
-      "wins": 2,
+      "wins": 3,
       "is_last": true,
-      "net": -2000,
-      "coffees": 0
+      "net": -1500,
+      "coffees": 2
     }
   ],
   "win_leaders": [
-    "Wizards of \u00d8"
+    "Wizards of \u00d8",
+    "sentinels"
   ],
   "most_wins": 3
 }
