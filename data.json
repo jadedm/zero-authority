@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-10-20T11:41:41+00:00",
+  "generated_at": "2026-10-20T17:11:01+00:00",
   "settled": [
     1,
     2,
@@ -47,7 +47,7 @@
     {
       "team": "Gooner_Psy",
       "name": "Saiprasad Shankar",
-      "total": 442,
+      "total": 443,
       "weeks": {
         "1": 40,
         "2": 105,
@@ -58,7 +58,7 @@
         "7": 52
       },
       "pos": 2,
-      "gap": 24,
+      "gap": 23,
       "win_gws": [
         6
       ],
