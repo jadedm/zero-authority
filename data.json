@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-10-25T16:25:10+00:00",
+  "generated_at": "2026-10-25T20:53:18+00:00",
   "settled": [
     1,
     2,
@@ -8,11 +8,10 @@
     4,
     5,
     6,
-    7
-  ],
-  "live": [
+    7,
     8
   ],
+  "live": [],
   "rules": {
     "entry": 1000,
     "penalty": 1000,
@@ -44,13 +43,13 @@
       ],
       "wins": 3,
       "is_last": false,
-      "net": 2500,
-      "coffees": 2
+      "net": 2000,
+      "coffees": 1
     },
     {
       "team": "Gooner_Psy",
       "name": "Saiprasad Shankar",
-      "total": 471,
+      "total": 480,
       "weeks": {
         "1": 40,
         "2": 105,
@@ -62,19 +61,19 @@
         "8": 25
       },
       "pos": 2,
-      "gap": 32,
+      "gap": 23,
       "win_gws": [
         6
       ],
       "wins": 1,
       "is_last": false,
       "net": -1000,
-      "coffees": -4
+      "coffees": -5
     },
     {
       "team": "sentinels",
       "name": "Manish Jadhav",
-      "total": 466,
+      "total": 475,
       "weeks": {
         "1": 46,
         "2": 114,
@@ -86,21 +85,21 @@
         "8": 28
       },
       "pos": 3,
-      "gap": 37,
+      "gap": 28,
       "win_gws": [
         2,
         4,
-        7
+        7,
+        8
       ],
-      "wins": 3,
+      "wins": 4,
       "is_last": true,
-      "net": -1500,
-      "coffees": 2
+      "net": -1000,
+      "coffees": 4
     }
   ],
   "win_leaders": [
-    "Wizards of \u00d8",
     "sentinels"
   ],
-  "most_wins": 3
+  "most_wins": 4
 }
