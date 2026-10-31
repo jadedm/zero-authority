@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-10-31T12:36:46+00:00",
+  "generated_at": "2026-10-31T21:37:55+00:00",
   "settled": [
     1,
     2,
@@ -25,7 +25,7 @@
     {
       "team": "Wizards of \u00d8",
       "name": "Satyajeet Kunjeer",
-      "total": 514,
+      "total": 561,
       "weeks": {
         "1": 59,
         "2": 104,
@@ -51,35 +51,9 @@
       "coffees": 3
     },
     {
-      "team": "Gooner_Psy",
-      "name": "Saiprasad Shankar",
-      "total": 491,
-      "weeks": {
-        "1": 40,
-        "2": 105,
-        "3": 37,
-        "4": 73,
-        "5": 57,
-        "6": 79,
-        "7": 52,
-        "8": 46,
-        "9": 0
-      },
-      "pos": 2,
-      "gap": 23,
-      "win_gws": [
-        6,
-        8
-      ],
-      "wins": 2,
-      "is_last": false,
-      "net": -1000,
-      "coffees": -3
-    },
-    {
       "team": "sentinels",
       "name": "Manish Jadhav",
-      "total": 479,
+      "total": 538,
       "weeks": {
         "1": 46,
         "2": 114,
@@ -91,17 +65,43 @@
         "8": 40,
         "9": 0
       },
-      "pos": 3,
-      "gap": 35,
+      "pos": 2,
+      "gap": 23,
       "win_gws": [
         2,
         4,
         7
       ],
       "wins": 3,
+      "is_last": false,
+      "net": -1000,
+      "coffees": 0
+    },
+    {
+      "team": "Gooner_Psy",
+      "name": "Saiprasad Shankar",
+      "total": 531,
+      "weeks": {
+        "1": 40,
+        "2": 105,
+        "3": 37,
+        "4": 73,
+        "5": 57,
+        "6": 79,
+        "7": 52,
+        "8": 46,
+        "9": 0
+      },
+      "pos": 3,
+      "gap": 30,
+      "win_gws": [
+        6,
+        8
+      ],
+      "wins": 2,
       "is_last": true,
       "net": -2000,
-      "coffees": 0
+      "coffees": -3
     }
   ],
   "win_leaders": [
