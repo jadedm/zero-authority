@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-11-02T15:59:48+00:00",
+  "generated_at": "2026-11-03T00:59:48+00:00",
   "settled": [
     1,
     2,
@@ -9,11 +9,10 @@
     5,
     6,
     7,
-    8
-  ],
-  "live": [
+    8,
     9
   ],
+  "live": [],
   "rules": {
     "entry": 1000,
     "penalty": 1000,
@@ -25,7 +24,7 @@
     {
       "team": "Wizards of \u00d8",
       "name": "Satyajeet Kunjeer",
-      "total": 575,
+      "total": 577,
       "weeks": {
         "1": 59,
         "2": 104,
@@ -47,13 +46,13 @@
       ],
       "wins": 4,
       "is_last": false,
-      "net": 3000,
-      "coffees": 3
+      "net": 2500,
+      "coffees": 2
     },
     {
       "team": "sentinels",
       "name": "Manish Jadhav",
-      "total": 543,
+      "total": 552,
       "weeks": {
         "1": 46,
         "2": 114,
@@ -63,19 +62,20 @@
         "6": 36,
         "7": 75,
         "8": 40,
-        "9": 66
+        "9": 75
       },
       "pos": 2,
-      "gap": 32,
+      "gap": 25,
       "win_gws": [
         2,
         4,
-        7
+        7,
+        9
       ],
-      "wins": 3,
+      "wins": 4,
       "is_last": false,
-      "net": -1000,
-      "coffees": 0
+      "net": -500,
+      "coffees": 2
     },
     {
       "team": "Gooner_Psy",
@@ -93,7 +93,7 @@
         "9": 51
       },
       "pos": 3,
-      "gap": 35,
+      "gap": 37,
       "win_gws": [
         6,
         8
@@ -101,11 +101,12 @@
       "wins": 2,
       "is_last": true,
       "net": -2000,
-      "coffees": -3
+      "coffees": -4
     }
   ],
   "win_leaders": [
-    "Wizards of \u00d8"
+    "Wizards of \u00d8",
+    "sentinels"
   ],
   "most_wins": 4
 }
