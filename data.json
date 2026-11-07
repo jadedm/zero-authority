@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-11-07T02:51:26+00:00",
+  "generated_at": "2026-11-07T13:06:15+00:00",
   "settled": [
     1,
     2,
@@ -55,7 +55,7 @@
     {
       "team": "sentinels",
       "name": "Manish Jadhav",
-      "total": 570,
+      "total": 572,
       "weeks": {
         "1": 46,
         "2": 114,
@@ -69,7 +69,7 @@
         "10": 18
       },
       "pos": 2,
-      "gap": 7,
+      "gap": 5,
       "win_gws": [
         2,
         4,
@@ -84,7 +84,7 @@
     {
       "team": "Gooner_Psy",
       "name": "Saiprasad Shankar",
-      "total": 540,
+      "total": 541,
       "weeks": {
         "1": 40,
         "2": 105,
@@ -98,7 +98,7 @@
         "10": 0
       },
       "pos": 3,
-      "gap": 37,
+      "gap": 36,
       "win_gws": [
         6,
         8
