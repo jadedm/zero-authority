@@ -1,6 +1,6 @@
 {
   "league": "zero authority",
-  "generated_at": "2026-11-07T13:06:15+00:00",
+  "generated_at": "2026-11-07T21:53:31+00:00",
   "settled": [
     1,
     2,
@@ -26,7 +26,7 @@
     {
       "team": "Wizards of \u00d8",
       "name": "Satyajeet Kunjeer",
-      "total": 577,
+      "total": 599,
       "weeks": {
         "1": 59,
         "2": 104,
@@ -37,7 +37,7 @@
         "7": 66,
         "8": 46,
         "9": 65,
-        "10": 0
+        "10": 22
       },
       "pos": 1,
       "gap": 0,
@@ -55,7 +55,7 @@
     {
       "team": "sentinels",
       "name": "Manish Jadhav",
-      "total": 572,
+      "total": 596,
       "weeks": {
         "1": 46,
         "2": 114,
@@ -66,10 +66,10 @@
         "7": 75,
         "8": 40,
         "9": 75,
-        "10": 18
+        "10": 44
       },
       "pos": 2,
-      "gap": 5,
+      "gap": 3,
       "win_gws": [
         2,
         4,
@@ -84,7 +84,7 @@
     {
       "team": "Gooner_Psy",
       "name": "Saiprasad Shankar",
-      "total": 541,
+      "total": 577,
       "weeks": {
         "1": 40,
         "2": 105,
@@ -95,10 +95,10 @@
         "7": 52,
         "8": 46,
         "9": 51,
-        "10": 0
+        "10": 37
       },
       "pos": 3,
-      "gap": 36,
+      "gap": 22,
       "win_gws": [
         6,
         8
